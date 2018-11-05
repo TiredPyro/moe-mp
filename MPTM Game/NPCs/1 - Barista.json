@@ -1,0 +1,37 @@
+{
+    "npcName": "Barista",
+    "npcID": 1,
+	"spritePath": "NPCs/Sprites/barista.png",
+	"npcDescription": "Barista descriptino test",
+	
+	"openingLines": [
+		"Hello there, I'm John. How may I help you?",
+		"Good day, I'm John."
+	],
+	
+	"closingLines": [
+		"I have to go for a meeting, I hope my answers have helped you.",
+		"Next in line please."
+	],
+	
+    "questionList": [
+        {
+            "question": "How has the recent prices of coffee been?",
+            "answer": "Prices have been increasing recently!",
+            "researchPoints": 10,
+            "infoPoints": 5,
+            "weightage": 10
+        },
+        {
+            "question": "How has your day been?",
+            "answer": "Oh it's been great.",
+            "researchPoints": -10,
+            "infoPoints": 0,
+            "weightage": 3
+        }
+    ],
+	"importItems": [
+	    "Coffee Beans",
+		"Tea Leaves"
+	]
+}

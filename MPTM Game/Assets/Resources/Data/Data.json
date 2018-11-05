@@ -1,0 +1,252 @@
+{
+  "NPCList": [
+    {
+      "npcName": "MAS Employee",
+      "npcID": 0,
+      "spritePath": "Assets/Data/NPCSprite/Character_Businessman.png",
+	  "thumbnailSpritePath": "Assets/Data/NPCSprite/Character_Businessman.png",
+      "npcDescription": "An employee of the Monetary Authority of Singapore (MAS); knows of most details about Singapore's current state of economy",
+      "openingLines": [
+        "Hello there, I'm John. How may I help you?",
+        "Good day, I'm John."
+      ],
+      "closingLines": [
+        "I have to go for a meeting, I hope my answers have helped you.",
+        "Next in line please."
+      ],
+      "questionList": [
+        {
+          "question": "Could you give us a summary of economic growth for the past two quarters?",
+          "answer": "There have been two consecutive quarters of double-digit growth.",
+		  "topic": "GDP",
+          "researchPoints": 15,
+          "infoPoints": 30,
+          "weightage": 10
+        },
+        {
+          "question": "How has the Global GDP been recently?",
+          "answer": "Global GDP has been on an uptrend for awhile now, and is expected to stay that way.",
+		  "topic": "GDP",
+          "researchPoints": 12,
+          "infoPoints": 20,
+          "weightage": 7
+        },
+        {
+          "question": "What is the current state of consumer demand?",
+          "answer": "Consumer demand has maintained moderately as of late.",
+		  "topic": "Consumer Demand",
+          "researchPoints": 8,
+          "infoPoints": 15,
+          "weightage": 6
+        },
+        {
+          "question": "How have recent import prices been like?",
+          "answer": "Well, import prices have been increasing at a moderate pace actually.",
+		  "topic": "Import Prices",
+          "researchPoints": 8,
+          "infoPoints": 25,
+          "weightage": 6
+        },
+        {
+          "question": "How have business rentals been this year?",
+          "answer": "Well, there has been a double-digit increase in business rentals for the first time!",
+          "researchPoints": 10,
+          "infoPoints": 30,
+          "weightage": 7
+        },
+        {
+          "question": "Is the crime rate rising or falling, or has it remained the same?",
+          "answer": "I don't really know much about the crime rate. It isn't my area of expertise.",
+          "researchPoints": -10,
+          "infoPoints": 0,
+          "weightage": 3
+        },
+        {
+          "question": "How was your day?",
+          "answer": "Uh, it's been decent.",
+          "researchPoints": -5,
+          "infoPoints": 0,
+          "weightage": 3
+        }
+      ]
+    },
+    {
+      "npcName": "Mr. Cheng",
+      "npcID": 1,
+      "spritePath": "Assets/Data/NPCSprite/Character_CoffeeshopUncle.png",
+	  "thumbnailSpritePath": "Assets/Data/NPCSprite/Character_CoffeeshopUncle.png",
+      "npcDescription": "A cheerful grandfather who goes to the coffee shop daily.",
+      "openingLines": [
+        "Good day."
+      ],
+      "closingLines": [
+        "Bye bye!"
+      ],
+      "questionList": [
+        {
+          "question": "Hello, how's your day?",
+          "answer": "It's been great!",
+          "researchPoints": -3,
+          "infoPoints": 0,
+          "weightage": 3
+        },
+        {
+          "question": "What are your opinions on the labour market?",
+          "answer": "I think that it's too difficult to find a sustainable job these days...",
+		  "topic": "LabourMarketAndBusinessCosts",
+          "researchPoints": 10,
+          "infoPoints": 15,
+          "weightage": 8
+        }
+      ]
+    },
+    {
+      "npcName": "Amira",
+      "npcID": 2,
+      "spritePath": "Assets/Data/NPCSprite/Character_MalayLady.png",
+	  "thumbnailSpritePath": "Assets/Data/NPCSprite/Character_MalayLady.png",
+      "npcDescription": "An economic government agency representative",
+      "openingLines": [
+        "How may I help you?"
+      ],
+      "closingLines": [
+        "See you soon."
+      ],
+      "questionList": [
+        {
+          "question": "How does the recent trend of GDP look like?",
+          "answer": "It's been <gdp_rate> for the past quarter if my memory serves me right.",
+          "researchPoints": 10,
+          "infoPoints": 5,
+          "weightage": 10
+        },
+        {
+          "question": "Do you know about the current state of consumer demand?",
+          "answer": "If I remember correctly, consumer demand has maintained moderately as of late.",
+          "researchPoints": 10,
+          "infoPoints": 5,
+          "weightage": 10
+        },
+        {
+          "question": "How does your coffee taste?",
+          "answer": "It's pretty good",
+          "researchPoints": -3,
+          "infoPoints": 0,
+          "weightage": 3
+        }
+      ]
+    },
+    {
+      "npcName": "Barista",
+      "npcID": 3,
+      "spritePath": "Assets/Data/NPCSprite/Character_Barista.png",
+	  "thumbnailSpritePath": "Assets/Data/NPCSprite/Character_Barista.png",
+      "npcDescription": "Barista of the Coffee Shop - she may know of prices related to imports",
+      "openingLines": [
+        "How may I help you?"
+      ],
+      "closingLines": [
+        "See you soon."
+      ],
+      "questionList": [
+        {
+          "question": "How has the recent prices of coffee been?",
+          "answer": "Prices of coffee beans have been <import_rate> recently... it'll be difficult to maintain the business like this.",
+		  "topic": "PricesOfImports",
+          "researchPoints": 10,
+          "infoPoints": 5,
+          "weightage": 10
+        },
+        {
+          "question": "Can I have a Caramel Macchiato?",
+          "answer": "Sure, that'll be $6.50",
+          "researchPoints": -3,
+          "infoPoints": 0,
+          "weightage": 3
+        }
+      ]
+    },
+    {
+      "npcName": "Taxi Driver",
+      "npcID": 4,
+      "spritePath": "",
+	  "thumbnailSpritePath": "Assets/Data/NPCSprite/Character_TaxiDriver.png",
+      "npcDescription": "An ordinary taxi driver.",
+      "openingLines": [
+        "Hello there, I'm John. How may I help you?",
+        "Good day, I'm John."
+      ],
+      "closingLines": [
+        "I have to go for a meeting, I hope my answers have helped you.",
+        "Next in line please."
+      ],
+      "questionList": [
+        {
+          "question": "Could you give us a summary of economic growth for the past two quarters?",
+          "answer": "There have been two consecutive quarters of double-digit growth.",
+          "researchPoints": 15,
+          "infoPoints": 10,
+          "weightage": 10
+        }
+      ]
+    }
+  ],
+  "MapList": [
+    {
+      "mapID": 0,
+      "mapName": "Office",
+      "backgroundPath": "Assets/Data/MapBG/Office.png",
+      "npc": 0
+    },
+    {
+      "mapID": 1,
+      "mapName": "Coffee Shop",
+      "backgroundPath": "CoffeeShop",
+      "npc": 1
+    },
+    {
+      "mapID": 2,
+      "mapName": "Glass Roof",
+      "backgroundPath": "Assets/Data/MapBG/GlassRoof.png",
+      "npc": 2
+    },
+    {
+      "mapID": 3,
+      "mapName": "Coffee Shop",
+      "backgroundPath": "CoffeeShop",
+      "npc": 3
+    },
+    {
+      "mapID": 4,
+      "mapName": "Taxi",
+      "backgroundPath": "Taxi",
+      "npc": 4
+    }
+  ],
+  "BuildingList": [
+    {
+      "buildingID": 0,
+      "buildingName": "MAS Building",
+      "npcList": [
+        0,
+        2
+          
+      ]
+    },
+    {
+      "buildingID": 1,
+      "buildingName": "Coffee Shop",
+      "npcList": [
+	    3,
+      1
+      ]
+    },
+	{
+      "buildingID": 2,
+      "buildingName": "Taxi",
+      "npcList": [
+        4
+      ]
+    }
+  ]
+}

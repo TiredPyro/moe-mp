@@ -1,0 +1,68 @@
+{
+    "npcName": "MAS Employee",
+    "npcID": 0,
+	"spritePath": "NPCs/Sprites/employee.png",
+	"npcDescription": "An employee of the Monetary Authority of Singapore (MAS); knows of most details about Singapore's current state of economy",
+	
+	"openingLines": [
+		"Hello there, I'm John. How may I help you?",
+		"Good day, I'm John."
+	],
+	
+	"closingLines": [
+		"I have to go for a meeting, I hope my answers have helped you.",
+		"Next in line please."
+	],
+	
+    "questionList": [
+        {
+            "question": "Could you give us a summary of economic growth for the past two quarters?",
+            "answer": "There have been two consecutive quarters of double-digit growth.",
+            "researchPoints": 15,
+            "infoPoints": 10,
+            "weightage": 10
+        },
+        {
+            "question": "How has the Global GDP been recently?",
+            "answer": "Global GDP has been on an uptrend for awhile now, and is expected to stay that way.",
+            "researchPoints": 12,
+            "infoPoints": 9,
+            "weightage": 7
+        },
+        {
+            "question": "What is the current state of consumer demand?",
+            "answer": "Consumer demand has maintained moderately as of late.",
+            "researchPoints": 8,
+            "infoPoints": 5,
+            "weightage": 6
+        },
+        {
+            "question": "How have recent import prices been like?",
+            "answer": "Well, import prices have been increasing at a moderate pace actually.",
+            "researchPoints": 8,
+            "infoPoints": 5,
+            "weightage": 6
+        },
+        {
+            "question": "How have business rentals been this year?",
+            "answer": "Well, there has been a double-digit increase in business rentals for the first time!",
+            "researchPoints": 10,
+            "infoPoints": 8,
+            "weightage": 7
+        },
+        {
+            "question": "Is the crime rate rising or falling, or has it remained the same?",
+            "answer": "I don't really know much about the crime rate. It isn't my area of expertise.",
+            "researchPoints": -10,
+            "infoPoints": 0,
+            "weightage": 3
+        },
+        {
+            "question": "How was your day?",
+            "answer": "Uh, it's been decent.",
+            "researchPoints": -5,
+            "infoPoints": 0,
+            "weightage": 3
+        }
+    ]
+}

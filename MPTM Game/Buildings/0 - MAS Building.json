@@ -1,0 +1,9 @@
+{
+    "buildingID": 0,
+    "buildingName": "MAS Building",
+	"npcList": [
+		0,
+		1,
+		2
+	]
+}
