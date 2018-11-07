@@ -174,7 +174,8 @@
       "npcDescription": "An ordinary taxi driver.",
       "openingLines": [
         "Hello there, I'm John. How may I help you?",
-        "Good day, I'm John."
+        "Good day, I'm John.",
+        "Do you come from a land down under?" //Test
       ],
       "closingLines": [
         "I have to go for a meeting, I hope my answers have helped you.",
@@ -185,6 +186,13 @@
           "question": "Could you give us a summary of economic growth for the past two quarters?",
           "answer": "There have been two consecutive quarters of double-digit growth.",
           "researchPoints": 15,
+          "infoPoints": 10,
+          "weightage": 10
+        },
+        { //Test
+          "question": "Where women go and men plunder?",
+          "answer": "Can't you hear, can't you hear the thunder?",
+          "researchPoints": 20,
           "infoPoints": 10,
           "weightage": 10
         }
