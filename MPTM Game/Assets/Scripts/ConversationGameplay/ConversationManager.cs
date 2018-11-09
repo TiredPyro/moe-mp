@@ -130,7 +130,8 @@ public class ConversationManager : MonoBehaviour {
                 if (!stateRunOnce)
 				{
 					timeElapsedButtonDisplay = 0.0f;
-					InstantiateSpeechChoices();
+                    //InstantiateSpeechChoices(); //Modified
+                    CreateSpeechChoices(CreateQuestionsList());
                     DialogueBox.SetActive(false);
                     stateRunOnce = true;
 					stopUpdatingButtonOpacity = false;
@@ -303,6 +304,86 @@ public class ConversationManager : MonoBehaviour {
 		}
 	}
 
+    //Modified
+    List<Question> CreateQuestionsList()
+    {
+        List<Question> totalQuestions = new List<Question>();
+
+        //Storing all the questions in a question list
+        foreach (Question question in questionList)
+            if (!PlayerProperties.QuestionsAsked.Contains(question))
+                totalQuestions.Add(question);
+
+        return totalQuestions;
+    }
+
+    //Modified
+    int CountQuestionsList(List<Question> totalQuestions)
+    {
+        return totalQuestions.Count;
+    }
+
+    //Modified
+    void CreateSpeechChoices(List<Question> totalQuestions)
+    {
+        if (totalQuestions.Count == 0)
+        {
+            endConvo = true;
+            ChangeState();
+            return;
+        }
+
+        int count = 0; //What index is the question being assigned to in gameobject buttons
+        for (int i = 0; i < Buttons.Length; i++)
+        {
+            if (i == Buttons.Length - 1)
+            {
+                Question question = Question.ExitConditions[Random.Range(0, Question.ExitConditions.Length)];
+                Buttons[count].SetActive(true);
+                Buttons[count].GetComponent<ConversationChoice>().CurrentQuestion = question;
+                Buttons[count].GetComponent<ConversationChoice>().QuestionText.text = question.question;
+                Buttons[count].GetComponent<Image>().color = Color.clear;
+                Buttons[count].GetComponent<Button>().interactable = false;
+                Buttons[count].GetComponentInChildren<Text>().color = Color.clear;
+                continue;
+            }
+
+            int totalWeightage = 0;
+            foreach (Question question in totalQuestions)
+            {
+                totalWeightage += question.weightage;
+            }
+            int r = Random.Range(0, totalWeightage + 1);
+            int weightagecount = 0;
+            int indexCount = 0;
+
+            while (weightagecount < totalWeightage)
+            {
+                weightagecount += totalQuestions[indexCount].weightage;
+                if (r <= weightagecount)
+                {
+
+                    //chosenChoice.CurrentQuestion = totalQuestions[indexCount];
+
+                    Buttons[count].SetActive(true);
+                    Buttons[count].GetComponent<ConversationChoice>().CurrentQuestion = totalQuestions[indexCount];
+                    Buttons[count].GetComponent<ConversationChoice>().QuestionText.text = totalQuestions[indexCount].question;
+                    Buttons[count].GetComponent<Image>().color = Color.clear;
+                    Buttons[count].GetComponent<Button>().interactable = false;
+                    Buttons[count].GetComponentInChildren<Text>().color = Color.clear;
+
+                    totalQuestions.RemoveAt(indexCount);
+                    count++;
+                    break;
+                }
+                else
+                {
+                    indexCount++;
+                }
+            }
+        }
+    }
+
     void InstantiateSpeechChoices()
     {
         //questionButtonNo.SetActive(false);
@@ -328,6 +409,7 @@ public class ConversationManager : MonoBehaviour {
                 }
                 */ 
             }
+        print(totalQuestions.Count);
 
 		if (totalQuestions.Count == 0)
 		{
