@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class LocationObject : MonoBehaviour {
     //public Building thisBuilding;
     //public int buildingID; If made it so that it loads up the image of each building, but hardcoding it.
+    public int buildingID; //Modified
     public Image mapImage;
     public bool highlightedArea;
 
@@ -23,6 +24,10 @@ public class LocationObject : MonoBehaviour {
         currentColor = GetComponent<Image>().color;
         a = currentColor.a;
         reachedTop = false;
+
+        //Modified
+        if (CheckForQuestionsScript.instance.IsBuildingCleared(buildingID))
+            highlightedArea = false;
     }
 
     void Update()

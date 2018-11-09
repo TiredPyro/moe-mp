@@ -174,8 +174,7 @@
       "npcDescription": "An ordinary taxi driver.",
       "openingLines": [
         "Hello there, I'm John. How may I help you?",
-        "Good day, I'm John.",
-        "Do you come from a land down under?" //Test
+        "Good day, I'm John."
       ],
       "closingLines": [
         "I have to go for a meeting, I hope my answers have helped you.",
@@ -188,11 +187,28 @@
           "researchPoints": 15,
           "infoPoints": 10,
           "weightage": 10
-        },
-        { //Test
-          "question": "Where women go and men plunder?",
-          "answer": "Can't you hear, can't you hear the thunder?",
-          "researchPoints": 20,
+        }
+      ]
+    },
+	{
+      "npcName": "Crying Cat",
+      "npcID": 5,
+      "spritePath": "Assets/Data/NPCSprite/png.png",
+	  "thumbnailSpritePath": "Assets/Data/NPCSprite/png.png",
+      "npcDescription": "Looks like it's crying.",
+      "openingLines": [
+        "Meeeeeowww!",
+        "Mrow!",
+		"*The cat seems to be crying too hard to notice you.*"
+      ],
+      "closingLines": [
+        "*It might be best to leave the poor guy alone.*"
+      ],
+      "questionList": [
+        {
+          "question": "Have you been lonely?",
+          "answer": "Yes, the light was gone.",
+          "researchPoints": 15,
           "infoPoints": 10,
           "weightage": 10
         }
@@ -229,7 +245,13 @@
       "mapName": "Taxi",
       "backgroundPath": "Taxi",
       "npc": 4
-    }
+    },
+	{
+	  "mapID": 5,
+      "mapName": "i've been lonely the light was gone",
+      "backgroundPath": "Placehold",
+      "npc": 5
+	}
   ],
   "BuildingList": [
     {
@@ -245,15 +267,16 @@
       "buildingID": 1,
       "buildingName": "Coffee Shop",
       "npcList": [
-	    3,
-      1
+	    1,
+        3
       ]
     },
 	{
       "buildingID": 2,
       "buildingName": "Taxi",
       "npcList": [
-        4
+        4,
+		5
       ]
     }
   ]

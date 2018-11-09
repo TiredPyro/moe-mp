@@ -106,20 +106,45 @@ public class MapSceneManager : MonoBehaviour
         phoneTransitioning = false;
     }
     */
+
+    //Modified
     public void BuildingClick(int buildingID)
     {
+        if (CheckForQuestionsScript.instance.IsBuildingCleared(buildingID))
+            return;
+
+        //Doesn't change NPC popup details incase the previous building selected was the same
         if (selectedBuilding != null && selectedBuilding.buildingID == buildingID)
         {
-            //Doesn't change NPC popup details incase the previous building selected was the same
-            ToggleNPCSelectPopup();
+            if (!CheckForQuestionsScript.instance.NoAvailableQuestions(selectedNPC))
+                ToggleNPCSelectPopup();
+
             return;
         }
 
         selectedBuilding = Building.GetBuilding(buildingID);
-        selectedNPC = selectedBuilding.npcList[0];
         selectedNPCIndex = 0;
-        SetPopupNPCDetails(NPC.GetNpc(selectedBuilding.npcList[selectedNPCIndex]));
-        ToggleNPCSelectPopup();
+        selectedNPC = selectedBuilding.npcList[selectedNPCIndex];
+
+        for (int i = 0; i < selectedBuilding.npcList.Count; i++)
+        {
+            if (!CheckForQuestionsScript.instance.NoAvailableQuestions(selectedNPC))
+            {
+                SetPopupNPCDetails(NPC.GetNpc(selectedBuilding.npcList[selectedNPCIndex]));
+
+                if (!CheckForQuestionsScript.instance.NoAvailableQuestions(selectedNPC))
+                    ToggleNPCSelectPopup();
+
+                break;
+            }
+            else
+            {
+                selectedNPCIndex++;
+
+                if (selectedNPCIndex < selectedBuilding.npcList.Count)
+                    selectedNPC = selectedBuilding.npcList[selectedNPCIndex];
+            }
+        }
     }
 
     public void ToggleNPCSelectPopup()
@@ -148,6 +173,7 @@ public class MapSceneManager : MonoBehaviour
         UI_NPCDescription.text = npc.GetDescription();
     }
 
+    //Modified
     //true = next NPC; false = previous
     public void SwitchNPC(bool next)
     {
@@ -155,7 +181,9 @@ public class MapSceneManager : MonoBehaviour
             (selectedNPCIndex == selectedBuilding.npcList.Count - 1 ? -selectedNPCIndex : 1) :
             (selectedNPCIndex == 0 ? selectedBuilding.npcList.Count - 1 : -1);
         selectedNPC = selectedBuilding.npcList[selectedNPCIndex];
-        SetPopupNPCDetails(NPC.GetNpc(selectedNPC));
+
+        if (!CheckForQuestionsScript.instance.NoAvailableQuestions(selectedNPC))
+            SetPopupNPCDetails(NPC.GetNpc(selectedNPC));
     }
 
     public void TalkToNPC()
