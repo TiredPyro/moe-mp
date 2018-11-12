@@ -130,16 +130,16 @@ public class DataParser
 	public static Sprite GetSpriteFromFile(string filePath, float pixelsPerUnit = 100.0f)
 	{
 		if (JSONData.UseResources)
-			return Resources.Load<Sprite>(filePath.Split('.')[0].Replace("\\", "/").Replace("Assets/Data/", JSONData.ResourcesPath));
+            return Resources.Load<Sprite>(filePath.Split('.')[0].Replace("\\", "/").Replace("Assets/Data/", JSONData.ResourcesPath));
 		Sprite sprite;
 
 		if (cachedSpriteList.ContainsKey(filePath))
 		{
-			cachedSpriteList.TryGetValue(filePath, out sprite);
+            cachedSpriteList.TryGetValue(filePath, out sprite);
 			return sprite;
 		}
 
-		Texture2D SpriteTexture = LoadTexture(filePath);
+        Texture2D SpriteTexture = LoadTexture(filePath);
 		sprite = Sprite.Create(SpriteTexture, new Rect(0, 0, SpriteTexture.width, SpriteTexture.height), new Vector2(0, 0), pixelsPerUnit);
 		cachedSpriteList.Add(filePath, sprite);
 		//Debug.Log(cachedSpriteList.Count);

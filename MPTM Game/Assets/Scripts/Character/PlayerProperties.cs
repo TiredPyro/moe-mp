@@ -8,7 +8,7 @@ public class PlayerProperties
 	public static float ResearchSkillPoints = 0;
 	public static float RequiredInfoPoints = 0;
 
-	public static int CurrentMap = 4;
+	public static int CurrentMap = 3;
 	public static int DestinationMap = -1;
 
     public static int CurrentBuilding;

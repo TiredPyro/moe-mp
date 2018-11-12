@@ -1132,7 +1132,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 898f0fe0c3344a94196bf7e9262514a7, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingID: 1
-  mapImage: {fileID: 0}
+  mapSprite: {fileID: 21300000, guid: 898f0fe0c3344a94196bf7e9262514a7, type: 3}
   highlightedArea: 1
   topAlpha: 1
   bottomAlpha: 0.8
@@ -2024,7 +2024,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed1a445e3a6ad044cb5501767a554eec, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2081,7 +2081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingID: 0
-  mapImage: {fileID: 0}
+  mapSprite: {fileID: 21300000, guid: ed1a445e3a6ad044cb5501767a554eec, type: 3}
   highlightedArea: 1
   topAlpha: 1
   bottomAlpha: 0.8
@@ -2969,7 +2969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingID: 2
-  mapImage: {fileID: 0}
+  mapSprite: {fileID: 21300000, guid: 49c2757ae3c11e54fb4d555ab132efdd, type: 3}
   highlightedArea: 1
   topAlpha: 1
   bottomAlpha: 0.8
@@ -3023,7 +3023,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 49c2757ae3c11e54fb4d555ab132efdd, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
