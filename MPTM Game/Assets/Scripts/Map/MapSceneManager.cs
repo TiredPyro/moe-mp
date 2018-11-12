@@ -177,13 +177,21 @@ public class MapSceneManager : MonoBehaviour
     //true = next NPC; false = previous
     public void SwitchNPC(bool next)
     {
-        selectedNPCIndex += next ?
-            (selectedNPCIndex == selectedBuilding.npcList.Count - 1 ? -selectedNPCIndex : 1) :
-            (selectedNPCIndex == 0 ? selectedBuilding.npcList.Count - 1 : -1);
-        selectedNPC = selectedBuilding.npcList[selectedNPCIndex];
+        int newNPCIndex = selectedNPCIndex + (next ?
+        (selectedNPCIndex == selectedBuilding.npcList.Count - 1 ? -selectedNPCIndex : 1) :
+        (selectedNPCIndex == 0 ? selectedBuilding.npcList.Count - 1 : -1));
 
-        if (!CheckForQuestionsScript.instance.NoAvailableQuestions(selectedNPC))
+        if (!CheckForQuestionsScript.instance.NoAvailableQuestions(selectedBuilding.npcList[newNPCIndex]))
+        {
+            //selectedNPCIndex += next ?
+            //(selectedNPCIndex == selectedBuilding.npcList.Count - 1 ? -selectedNPCIndex : 1) :
+            //(selectedNPCIndex == 0 ? selectedBuilding.npcList.Count - 1 : -1);
+
+            selectedNPCIndex = newNPCIndex;
+            selectedNPC = selectedBuilding.npcList[selectedNPCIndex];
+
             SetPopupNPCDetails(NPC.GetNpc(selectedNPC));
+        }
     }
 
     public void TalkToNPC()
